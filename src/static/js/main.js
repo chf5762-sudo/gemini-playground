@@ -73,6 +73,13 @@ if (savedSystemInstruction) {
     CONFIG.SYSTEM_INSTRUCTION.TEXT = savedSystemInstruction;
 }
 
+// Save API Key to localStorage when user inputs it
+apiKeyInput.addEventListener('input', () => {
+    if (apiKeyInput.value) {
+        localStorage.setItem('gemini_api_key', apiKeyInput.value);
+    }
+});
+
 // Handle configuration panel toggle
 configToggle.addEventListener('click', () => {
     configContainer.classList.toggle('active');
